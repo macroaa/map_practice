@@ -1,0 +1,31 @@
+import java.util.Map;
+import java.util.HashMap;
+class TimeMap {
+    Map<String, String> obj = new HashMap<>();
+    public TimeMap() {
+                     
+
+    }
+    
+    public void set(String key, String value, int timestamp) {
+        obj.put(key+timestamp,value);
+        
+    }
+    
+    public String get(String key, int timestamp) {
+        while(timestamp>0)
+        {
+            if(obj.containsKey(key+timestamp)) return obj.get(key+timestamp);
+            timestamp--;
+        }
+        return "";
+    }
+    
+}
+
+/**
+ * Your TimeMap object will be instantiated and called as such:
+ * TimeMap obj = new TimeMap();
+ * obj.set(key,value,timestamp);
+ * String param_2 = obj.get(key,timestamp);
+ */
